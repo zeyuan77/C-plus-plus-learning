@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35222.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "算法", "算法\算法.vcxproj", "{67B25C29-FB25-4601-9477-0159CA972C7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{67B25C29-FB25-4601-9477-0159CA972C7E}.Debug|x64.ActiveCfg = Debug|x64
+		{67B25C29-FB25-4601-9477-0159CA972C7E}.Debug|x64.Build.0 = Debug|x64
+		{67B25C29-FB25-4601-9477-0159CA972C7E}.Debug|x86.ActiveCfg = Debug|Win32
+		{67B25C29-FB25-4601-9477-0159CA972C7E}.Debug|x86.Build.0 = Debug|Win32
+		{67B25C29-FB25-4601-9477-0159CA972C7E}.Release|x64.ActiveCfg = Release|x64
+		{67B25C29-FB25-4601-9477-0159CA972C7E}.Release|x64.Build.0 = Release|x64
+		{67B25C29-FB25-4601-9477-0159CA972C7E}.Release|x86.ActiveCfg = Release|Win32
+		{67B25C29-FB25-4601-9477-0159CA972C7E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {794A27E4-A3EF-4E10-9624-59B0222E89B9}
+	EndGlobalSection
+EndGlobal
