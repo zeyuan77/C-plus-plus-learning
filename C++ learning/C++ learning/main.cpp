@@ -1045,7 +1045,7 @@
 //#include<iostream>
 //#include<map>
 //using namespace std;
-//void printMap(const map<int, int>& m)
+//void printmap(const map<int, int>& m)
 //{
 //	for (map<int, int>::const_iterator it = m.begin(); it != m.end(); it++)
 //	{
@@ -1062,9 +1062,9 @@
 //		pair<int,int>(3,9),
 //		pair<int,int>(4,22)
 //	};
-//	printMap(m);
+//	printmap(m);
 //	m.insert(make_pair(5, 20));
-//	printMap(m);
+//	printmap(m);
 //	m[3] -= 2;
 //	cout << m[3] << endl;
 //	return 0;
@@ -1517,3 +1517,118 @@
 //
 //	return 0;
 //}
+//#include<iostream>
+//#include<string>
+//#include<map>
+//#include<vector>
+//#include<algorithm>//sort
+//using namespace std;
+//bool cmp(const pair<char, int>& p1, const pair<char, int>& p2)
+//{
+//	return p1.second > p2.second;//½µÐò
+//}
+//int  main()
+//{
+//	char input;
+//	map<char, int> m;
+//	vector<pair<char, int>> v;
+//	while(cin.get(input)&&input!='.')
+//	{
+//		if (isalpha(input))
+//		{
+//			m[input]++;
+//		}
+//	}
+//	v.assign(m.begin(), m.end());
+//	sort(v.begin(), v.end(), cmp);
+//	cout << "Letter" << '\t' << "Number of Occurrences" << endl;
+//	for (int i = 0; i < v.size(); ++i)
+//	{
+//		cout << v[i].first << '\t' << v[i].second << endl;
+//
+//	}
+//	
+//
+//	return 0;
+//}
+#include<iostream>
+#include<vector>
+#include<string>
+using namespace std;
+int seatTotal = 28;
+void printSeatinf(const vector<vector<char>>& v)
+{
+	cout << "----" << "Seat" << "----" << endl;;
+	for (int i = 0; i < 7; ++i)
+	{
+		cout << i+1<<" ";
+		for (int j = 0; j < 4; j++)
+		{
+			cout << v[i][j] <<" ";
+		}
+		cout << endl;
+	}
+}
+void bookSeat(vector<vector<char>>& v)
+{
+	int row;
+	char seatType;
+	int seatIndex=0;
+	cout << "Input the row of ticket you wanna pick(1-7):" << endl;
+	cin >> row;
+	if (row < 1 || row>7)
+	{
+		cout << "error row" << endl;;
+		return;
+	}
+	cout << "Input the seat you wanna pick(A,B,C,D):" << endl;
+	cin >> seatType;
+	if (seatType < 'A' || seatType>'D')
+	{
+		cout << "Can't find such seat" << endl;;
+		return;
+	}
+	loop: switch (seatType)
+	{
+	case 'A':seatIndex = 0; break;
+	case 'B':seatIndex = 1; break;
+	case 'C':seatIndex = 2; break;
+	case 'D':seatIndex = 3; break;
+	}
+	if (v[row - 1][seatIndex] != 'X')
+	{
+		v[row - 1][seatIndex] = 'X';
+		--seatTotal;
+		cout << "Successfully booked" << endl;
+		
+	}
+	else
+	{
+		cout << "This seat was already booked" << endl;
+		cout << "Choose anather ticket" << endl;
+		cin >> seatType;
+		goto loop;
+	}
+		
+
+	cout << seatTotal << "seat left" << endl;
+}
+int main()
+{
+	vector<vector<char>> v;
+	string choice = "yes";
+	for (int i = 0; i < 7; ++i)
+	{
+		v.push_back({ 'A','B','C','D' });
+	}
+	while (choice == "yes" && seatTotal)
+	{
+		printSeatinf(v);
+		bookSeat(v);
+		cout << "Would you like to book another ticket ? (yes / no) : " << endl;
+		cin >> choice;
+	}
+	
+
+	return 0;
+}
