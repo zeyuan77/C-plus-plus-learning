@@ -1,0 +1,5 @@
+﻿  score.c
+D:\Code\学生成绩管理系统\学生成绩管理系统\score.c(59,118): warning C4244: “=”: 从“double”转换到“float”，可能丢失数据
+  test.c
+  正在生成代码...
+  学生成绩管理系统.vcxproj -> D:\Code\学生成绩管理系统\x64\Debug\学生成绩管理系统.exe
